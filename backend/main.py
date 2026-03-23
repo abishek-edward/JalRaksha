@@ -1,6 +1,10 @@
+import os
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes import predict, history
+
+port = int(os.environ.get("PORT", 10000))
 
 app = FastAPI(title="JalRaksha API", description="AI-Powered Water-Borne Disease Early Warning System")
 
